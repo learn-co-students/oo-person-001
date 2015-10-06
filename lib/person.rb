@@ -48,29 +48,29 @@ class Person
   end
 
   def take_bath
-    self.hygiene = hygiene + 4 #don't need self because it is implied, but it helped the test pass
+    self.hygiene += 4 #don't need self because it is implied, but it helped the test pass
     "♪ Rub-a-dub just relaxing in the tub ♫"
   end
   
   def work_out
-    self.happiness = self.happiness + 2
-    self.hygiene = self.hygiene - 3
+    self.happiness += 2
+    self.hygiene -= 3
     "♪ another one bites the dust ♫"
   end
 
   def call_friend(friend)
-    self.happiness = self.happiness + 3
+    self.happiness += 3
     friend.happiness += 3
     "Hi #{friend.name}! It's #{self.name}. How are you?"
   end
 
   def start_conversation(person, topic)
     if topic == "politics"
-      self.happiness = self.happiness - 2
+      self.happiness -= 2
       person.happiness-= 2
       "blah blah partisan blah lobbyist"
     elsif topic == "weather"
-      self.happiness = self.happiness + 1
+      self.happiness += 1
       person.happiness += 1
       "blah blah sun blah rain"
     else
